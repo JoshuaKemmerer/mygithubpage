@@ -8,9 +8,14 @@
     <link href="Content/bootstrap-theme.css" rel="stylesheet">
     <link href="Content/bootstrap.css" rel="stylesheet">
     <link href="Content/styles.css" rel="stylesheet">
+    <link href="Includes/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/styles_db-table.css" rel="stylesheet" />
+    <link href="Content/skill-bars.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.js"></script>
     <script src="Scripts/jquery-1.9.1.intellisense.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/animation_db-table-builder.js"></script>
+
 </head>
 <body>
 
@@ -60,9 +65,9 @@
                     <h2>Joshua Kemmerer</h2>
                     <h3 class=""></h3>
                     <p>
-                        I am a Software Developer and loving it! My primary focus right now is Web Applications Development, with side-interests in Mobile Apps, Data Structures and Algorithms, and learning the functional programming paradigm.
+                        I am a Software Developer with a primary focus in Web Applications Development and side-interests in Mobile Apps, Data Structures and Algorithms, and learning the functional programming paradigm.
                         <br /><br />
-                        I love and enjoy my occupation, so it should be no surprise that much of my time is spent either reading a programming book, researching programming concepts, solving programming problems, or, of course, programming!
+                        As a very passionate developer, you should not be surprised to see me spending much of my time either reading a programming book, researching programming concepts, solving programming problems, or, of course, programming!
                         <br /><br />
                     </p>
                 </div>
@@ -137,18 +142,65 @@
                     <div class="container-bullet">
                         <div class="bullet bgLRed">
                             <p>
-                                Independently transitioned two major sections of the company's previous extranet into the new extranet, designing for multple platforms and the majority of the personell at K'NEX.
+                                Developed and launched five major projects for different clients ranging from customers, to business partners, to internal employees using ASP.NET Web Forms pages, which required the use of HTML, CSS, Javascript for the client-side pages, and C# for the code-behind
                             </p>
                         </div>
                         <div class="bullet bgLRed">
                             <p>
-                                Communicated with the Web Team, Marketing, Sales, and Shipping to create personalized services that would increase productivity and save the company thousands of dollars every year.
+                                Administered changes to the company’s consumer-facing website by developing code in PHP and using tools such as the Bash command line interpreter and Vim text editor
                             </p>
                         </div>
                         <div class="bullet bgLRed">
                             <p>
-                                Introduced and developed naming conventions, coding standards, and reusable code into the workplace in order to simplify future software development and aid in the task of software testing.
+                                Introduced and implemented coding practices that significantly decreased development time and the amount of code that had to be written, and updated and contributed to existing code with solutions that were concise but modern and extensible
                             </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row hidden-md hidden-sm hidden-xs hidden-print">
+                <div class="pg-experience">
+                    <div class="p1">
+                        <div class="p1-heading">
+                            <h4 class="p1-title">
+                                <a data-toggle="collapse" href="#p1" id="load_dbAnimation" class="p1-title-txt">Show More</a>
+                            </h4>
+                        </div>
+                        <div id="p1" class="panel-collapse collapse">
+                            <div class="panel-body p1-body" id="dbAnimation">
+                                <!-- DB STACK -->
+                                <div id="db-container" class="col-lg-4 col-md-4 col-xs-12 db-container">
+                                    <div class="oval oval-first">
+                                        <div id="cap-first" class="cap cap-first"></div>
+                                        <div id="cap-first2" class="cap cap-first cap-first-shadow"></div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                </div>
+                                <!-- SKILLS -->
+                                <div id="code-container" class="col-lg-10 col-md-8 col-xs-12 code-container">
+                                    <div>
+                                        <div class="bar bar-1 inline"><br />C#&nbsp;&nbsp;<br /></div>
+                                        <div class="line-count inline">8000+</div>
+                                    </div>
+                                    <div>
+                                        <div class="bar bar-2 inline">HTML, Javascript, CSS&nbsp;&nbsp;</div>
+                                        <div class="line-count inline">5500+</div>
+                                    </div>
+                                    <div>
+                                        <div class="bar bar-3 inline"><br />PHP&nbsp;&nbsp;<br /></div>
+                                        <div class="line-count inline">300+</div>
+                                    </div>
+                                    <br />
+
+                                    <div class="inline">
+                                        <img src="Images/vs-logo.jpg" class="vs-logo" />
+                                    </div>
+                                    <div class="inline">
+                                        <img src="Images/windows-server-2008-logo.jpg" class="mss-logo" />
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -232,7 +284,7 @@
                         <tr class="colHeading">
                             <td>Skill</td>
                             <td>Level of Expertise</td>
-                            <td>Date Introduced</td>
+                            <td>Experience Since</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -278,7 +330,7 @@
                             <td>Python</td>
                             <td>Intermediate</td>
                             <td>Nov 2014</td>
-                        </tr> 
+                        </tr>
                         <tr>
                             <td>C</td>
                             <td>Intermediate</td>
@@ -462,5 +514,60 @@
         </div>
     </section>
 
+    <div id="topBar">
+        <a href="#" id="load_home"> HOME </a>
+    </div>
+    <div id="content">
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var $dbCount = 21;
+            for (var i = 1; i < $dbCount + 1; i++) {
+                $("<style>")
+                  .prop("type", "text/css")
+                  .html("\
+                .db-container:hover .oval" + i + " {\
+                  opacity: 1;\
+                  -webkit-transition: all 0.2s ease-in-out;\
+                  -moz-transition: all 0.2s ease-in-out;\
+                  -o-transition: all 0.2s ease-in-out;\
+                  transition: all 0.2s ease-in-out;\
+                  -moz-transition-delay: " + (0.075 * i) + "s;\
+                  -o-transition-delay: " + (0.075 * i) + "s;\
+                  -webkit-transition-delay: " + (0.075 * i) + "s;\
+                  transition-delay: " + (0.075 * i) + "s;\
+                }\
+                .db-container:hover .cap-shadow" + i + " {\
+                  opacity: 1;\
+                  -webkit-transition: all 0.s ease-in-out;\
+                  -moz-transition: all 0.2s ease-in-out;\
+                  -o-transition: all 0.2s ease-in-out;\
+                  transition: all 0.2s ease-in-out;\
+                  -moz-transition-delay: " + (0.075 * i) + "s;\
+                  -o-transition-delay: " + (0.075 * i) + "s;\
+                  -webkit-transition-delay: " + (0.075 * i) + "s;\
+                  transition-delay: " + (0.075 * i) + "s;\
+                }\
+                .oval" + i + " {\
+                  top: " + 6 * i + "px;\
+                  z-index: " + i + ";\
+                }")
+                  .appendTo("head");
+
+                if (i == $dbCount)
+                    $('.db-container').prepend("<div class='oval oval-rest oval" + i +
+                      "'><div class='cap-last cap-shadow cap-shadow" + i + "'></div></div>");
+                else
+                    $('.db-container').prepend("<div class='oval oval-rest oval" + i +
+                      "'><div class='cap cap-shadow cap-shadow" + i + "'></div></div>");
+            }
+            $('.db-container').prepend("<div class='center-text'><span class='db-title-b2b'>21+ Tables Created</span></div>");
+
+            $('.db-container').onmouseover(function () {
+                $('cap-first').css({ 'background-image': "radial-gradient( #616161, #DADADA )" });
+            });
+        });
+    </script>
 </body>
 </html>

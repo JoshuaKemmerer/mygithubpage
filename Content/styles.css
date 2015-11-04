@@ -17,6 +17,10 @@ h5 {
     padding-bottom: 20px;
 }
 
+.inline{
+    display: inline-block;
+}
+
 .popBox {
     background-color: rgb(255, 255, 255);
     padding: 30px;
@@ -125,11 +129,12 @@ h5 {
 }
 
 .hero {
-  position: relative;
-  width: 100%;
-  padding: 2em 0;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 2em 0;
+    overflow: hidden;
 }
+
 .heroBackground {
     position: absolute;
     background-attachment: fixed;
@@ -140,12 +145,13 @@ h5 {
     -o-filter: blur(2px);
     -ms-filter: blur(2px);
 }
-  .heroTitle {
+
+.heroTitle {
     position: relative;
     text-align: center;
     font-size: 5em;
     color: white;
-  }
+}
 
 /* ABOUT STYLES*/
 .about {
@@ -164,8 +170,43 @@ h5 {
     color: black;
 }
 
-.projects{
+.projects {
     color: rgb(76, 76, 76);
+}
+
+.p1-heading {
+    color: #505050;
+    background-color: #CCCCCC;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.p1-title {
+    padding: 10px;
+}
+
+.p1-title-txt {
+    color: #616161;
+}
+
+.p1-title a:hover, a:focus {
+    color: #1B1B1B;
+    text-decoration: none;
+}
+
+.p1-body{
+    background-color: white;
+}
+
+.vs-logo{width: 300px;
+    margin-left: 50px;
+}
+
+.mss-logo{
+    width: 300px;
+    margin-left: 100px;
 }
 
 /* SKILLS STYLES*/
@@ -267,6 +308,7 @@ tbody > tr > td, .table > tfoot > tr > td {
 
 .pyr > div {
     margin-top: 5px;
+    border-radius: 5px 5px 0px 0px;
 }
 
 .pyr-4 {
@@ -294,14 +336,14 @@ tbody > tr > td, .table > tfoot > tr > td {
     margin: auto;
 }
 
-.emailLink{
+.emailLink {
     color: rgb(6, 0, 226);
 }
-.emailLink:hover,.emailLink:active{
-    color:rgb(117, 117, 117);
-    text-decoration:none;
-}
 
-.submitBtn{
+    .emailLink:hover, .emailLink:active {
+        color: rgb(117, 117, 117);
+        text-decoration: none;
+    }
 
+.submitBtn {
 }
